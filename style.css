@@ -5,3 +5,19 @@ header {
     margin: 10px;
     color: white;
 }
+
+#myWeather {
+    padding-left: 50px;
+}
+
+.textGreen {
+    background-color: lightgreen;
+}
+
+.textOrange {
+    background-color: orange;
+}
+
+.textRed {
+    background-color: red;
+}

@@ -19,10 +19,33 @@
             <button type="button" class="btn btn-primary" id="searchButton">Search</button>
         </div>
     </div>
-    <div class="row" id="myWeather">
 
-    </div>
-    
+<div class="card w-75">
+  <div class="card-body" id="myWeather">
+    <h5 class="card-title">Current Weather:</h5>
+    <p class="title">Name:<span class="nameSpan"></span></p>
+    <p class="icon"><span class="iconSpan"></span></p>
+    <p class="date">Date:<span class="dateSpan"></span></p>
+    <p class="temp">Temperature:<span class="tempSpan"></span></p>
+    <p class="humidity">Humidity:<span class="humiditySpan"></span></p>
+    <p class="windSpeed">Wind Speed:<span class="windSpeedSpan"></span></p>
+    <p class="uvi">UV:<span class="uviSpan"></span></p>
+  </div>
+</div>
+
+<div class="card w-50">
+  <div class="card-body" id="weather5DayForecast">
+    <h5 class="card-title">5 Day Forecast:</h5>
+    <p class="card-text"></p>
+  </div>
+</div>
+<div class="row" id="myWeather">
+</div>
+
+
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 
 </html>

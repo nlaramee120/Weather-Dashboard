@@ -15,12 +15,13 @@ var iconSpan = document.querySelector(".iconSpan");
 var tempSpan = document.querySelector(".tempSpan");
 var humiditySpan = document.querySelector(".humiditySpan");
 var windSpeedSpan = document.querySelector(".windSpeedSpan");
+var day1 = document.querySelector(".day1");
 
 searchButton.addEventListener("click", () => {
   fetch(
     "https://api.openweathermap.org/data/2.5/weather?q=" +
       searchInput.value +
-      "&appid=7942df8d530afcd79d7082dc1c43784e"
+      "&appid=7942df8d530afcd79d7082dc1c43784e&units=imperial"
   )
     .then((response) => response.json())
     .then((data) => {
@@ -54,11 +55,17 @@ searchButton.addEventListener("click", () => {
           uviSpan.innerHTML = uviValue;
 
           if (uviValue <= 2) {
+            $(".uviSpan").removeClass("textOrange");
+            $(".uviSpan").removeClass("textRed");
             $(".uviSpan").addClass("textGreen");
-          } else if (uviValue > 2 && uviValue <= 5) {
+          } else if (uviValue > 2 && uviValue <= 5) {            
+            $(".uviSpan").removeClass("textGreen");
+            $(".uviSpan").removeClass("textRed");
             $(".uviSpan").addClass("textOrange");
-          } else {
-            $(".uviSpan").addClass("textRed");
+          } else {            
+            $(".uviSpan").removeClass("textOrange");
+            $(".uviSpan").removeClass("textGreen");
+            $(".uviSpan").addClass("textRed");            
           }
 
           fetch(
@@ -67,6 +74,11 @@ searchButton.addEventListener("click", () => {
             .then((response) => response.json())
             .then((data) => {
               console.log(data);
+
+              
+              var day1Value = data.list.[0];
+
+              day1.innerHTML = day1Value
             });
         });
     });

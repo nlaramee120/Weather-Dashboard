@@ -69,14 +69,14 @@ searchButton.addEventListener("click", () => {
           }
 
           fetch(
-            "https://api.openweathermap.org/data/2.5/forecast?q=chicago&appid=7942df8d530afcd79d7082dc1c43784e"
+            "https://api.openweathermap.org/data/2.5/forecast?q=" + searchInput.value + "&appid=7942df8d530afcd79d7082dc1c43784e"
           )
             .then((response) => response.json())
             .then((data) => {
               console.log(data);
 
               
-              var day1Value = data.list.[0];
+              var day1Value = data.list[0].main.temp
 
               day1.innerHTML = day1Value
             });
